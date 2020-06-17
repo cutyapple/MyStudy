@@ -13,7 +13,7 @@
 
 ### npm add 목록
 
-* `npm add redux react-redux redux-devtools-extension redux-action`
+* `npm add redux react-redux redux-devtools-extension redux-actions`
 
 
 
@@ -71,4 +71,6 @@
   * `const 결과 = useSelector(상태 선택 함수);`
   * `const dispatch = useDispatch();`
   * `<A onBB={() => dispatch(bb)} />`
-* 
+
+
+
