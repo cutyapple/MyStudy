@@ -39,3 +39,76 @@
 
 
 
+
+
+### 1) 설치
+
+* ```shell
+  npm install @storybook/react --save-dev
+  ```
+
+* ```shell
+  npm install react react-dom --save
+  npm install babel-loader @babel/core --save-dev
+  ```
+
+
+
+
+
+### 2) npm script 추가
+
+* `package.json` 파일에 하단 코드 추가
+
+* ```json
+  {
+      "scripts": {
+          "storybook": "start-storybook"
+      }
+  }
+  ```
+
+
+
+### 3) main file 생성
+
+* `.storybook/main.js`파일 변경하기
+
+* ```js
+  module.exports = {
+      stories: ['../src/**/*.stories.[tj]s'],
+  };
+  ```
+
+* src 폴더 내부에 어떤 폴더 내부에 `.stories.ts` 또는 `.stories.js`로 끝나는 파일을 규정
+
+
+
+### 4) 스토리 작성
+
+* `..src/index.stories.js` 파일 추가
+
+* ```javascript
+  import React from 'react';
+  import { Button } from '@storybook/react/demo';
+  
+  export default { title: 'Button' };
+  
+  export const withText = () => <Button>Hello Button</Button>;
+  
+  export const withEmoji = () => (
+  	<Button>
+      	<span role="img" aria-label="so cool">
+       		😀 😎 👍 💯
+      	</span>
+      </Button>
+  )
+  ```
+
+
+
+### 5) 스토리북 실행
+
+* ```shell
+  npm run storybook
+  ```
